@@ -1,3 +1,7 @@
+/* global db, print, sleep */
+
+/* eslint-disable perfectionist/sort-objects -- MongoDB command names must remain the first key. */
+
 // Initiate rs set
 const admin = db.getSiblingDB('admin');
 try {
@@ -18,7 +22,7 @@ try {
         },
     });
 
-    if (result.ok !== 1) throw new Error(`Replica set initialization failed: ${JSON.stringify(result)}`);
+    if (result.ok !== 1) throw new Error(`Replica set initialization failed: ${JSON.stringify(result)}`, { cause: error });
     print('Initialized single-node replica set rs0');
 }
 
