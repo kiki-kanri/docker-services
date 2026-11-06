@@ -1,0 +1,30 @@
+name: services
+
+include:
+  # ClickHouse
+  - ./stacks/clickhouse/main/compose.yaml
+
+  # Dragonfly
+  - ./stacks/dragonfly/main/compose.yaml
+
+  # GitLab
+  - ./stacks/gitlab/compose.yaml
+  - ./stacks/gitlab/runner/compose.yaml
+
+  # MariaDB
+  - ./stacks/mariadb/main/compose.yaml
+  - ./stacks/phpmyadmin/compose.yaml
+
+  # MongoDB
+  - ./stacks/mongodb/main/compose.yaml
+
+  # PostgreSQL
+  - ./stacks/postgres/main/compose.yaml
+  - ./stacks/pgadmin/compose.yaml
+
+  # Others
+  - ./stacks/portainer/compose.yaml
+  - ./stacks/registry/compose.yaml
+  - ./stacks/rest-server/compose.yaml
+  - ./stacks/rustfs/compose.yaml
+  - ./stacks/verdaccio/compose.yaml

@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "lint": "eslint --max-warnings 0",
+    "lint:fix": "eslint --fix --max-warnings 0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^10.0.0",
+    "@kikiutils/eslint-config": "^10.2.1",
+    "eslint": "^10.14.0"
+  }
+}
