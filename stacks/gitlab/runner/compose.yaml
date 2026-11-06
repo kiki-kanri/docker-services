@@ -1,6 +1,8 @@
 services:
   gitlab-runner:
     container_name: gitlab-runner
+    extra_hosts:
+      - '${GITLAB_HOSTNAME:?must be set}:host-gateway'
     image: 'gitlab/gitlab-runner:alpine'
     logging:
       driver: json-file

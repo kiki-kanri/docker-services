@@ -13,6 +13,7 @@ services:
         max-size: 10m
     mem_limit: '${GITLAB_MEMORY_LIMIT:?must be set}'
     ports:
+      - '${GITLAB_PAGES_EXPOSE_HOST:?must be set}:${GITLAB_PAGES_EXPOSE_PORT:?must be set}:8090'
       - '${GITLAB_SSH_EXPOSE_HOST:?must be set}:${GITLAB_SSH_EXPOSE_PORT:?must be set}:22'
       - '${GITLAB_WEB_EXPOSE_HOST:?must be set}:${GITLAB_WEB_EXPOSE_PORT:?must be set}:80'
     restart: always
