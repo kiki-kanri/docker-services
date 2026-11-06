@@ -8,6 +8,10 @@ if [ -r /run/secrets/DRAGONFLY_MAIN_PASSWORD ]; then
     DRAGONFLY_MAIN_PASSWORD="$(</run/secrets/DRAGONFLY_MAIN_PASSWORD)"
     DRAGONFLY_MAIN_PASSWORD="${DRAGONFLY_MAIN_PASSWORD#"${DRAGONFLY_MAIN_PASSWORD%%[![:space:]]*}"}"
     DRAGONFLY_MAIN_PASSWORD="${DRAGONFLY_MAIN_PASSWORD%"${DRAGONFLY_MAIN_PASSWORD##*[![:space:]]}"}"
+
+    if [ -z "${DRAGONFLY_MAIN_PASSWORD}" ]; then
+        echo 'Warning: "DRAGONFLY_MAIN_PASSWORD" is empty; starting without a password' >&2
+    fi
 else
     echo 'Warning: "/run/secrets/DRAGONFLY_MAIN_PASSWORD" does not exist or is not readable; starting without a password' >&2
 fi

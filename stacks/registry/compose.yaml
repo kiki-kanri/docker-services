@@ -15,5 +15,5 @@ services:
       - '${REGISTRY_EXPOSE_HOST:?must be set}:${REGISTRY_EXPOSE_PORT:?must be set}:5000'
     restart: always
     volumes:
+      - '${REGISTRY_FILES_PATH:?must be set}:/var/lib/registry'
       - './auth:/auth:ro'
-      - './data:/var/lib/registry'

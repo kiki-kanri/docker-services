@@ -8,7 +8,7 @@ services:
     environment:
       MARIADB_ROOT_PASSWORD_FILE: /run/secrets/MARIADB_MAIN_ROOT_PASSWORD
       TZ: '${MARIADB_MAIN_TZ:?must be set}'
-    image: 'mariadb:12'
+    image: 'mariadb:13'
     logging:
       driver: json-file
       options:
@@ -23,4 +23,4 @@ services:
     volumes:
       - '${MARIADB_MAIN_BACKUPS_PATH:?must be set}:/mnt/backups'
       - '${MARIADB_MAIN_FILES_PATH:?must be set}:/var/lib/mysql'
-      - ./conf.d:/etc/mysql/conf.d:ro
+      - './etc:/etc/mysql/conf.d:ro'

@@ -32,4 +32,4 @@ services:
       - '${CLICKHOUSE_MAIN_BACKUPS_PATH:?must be set}:/mnt/backups'
       - '${CLICKHOUSE_MAIN_FILES_PATH:?must be set}:/var/lib/clickhouse'
       - '${CLICKHOUSE_MAIN_LOGS_PATH:?must be set}:/var/log/clickhouse-server'
-      - ./config.d/backups.xml:/etc/clickhouse-server/config.d/backups.xml:ro
+      - './etc/backups.xml:/etc/clickhouse-server/config.d/backups.xml:ro'
