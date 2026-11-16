@@ -2,10 +2,11 @@ services:
   registry:
     container_name: registry
     environment:
+      OTEL_TRACES_EXPORTER: none
       REGISTRY_AUTH: htpasswd
       REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
       REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
-    image: 'registry:2'
+    image: 'registry:3'
     logging:
       driver: json-file
       options:
